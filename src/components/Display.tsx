@@ -30,8 +30,6 @@ const Display: React.FC<DisplayProps> = ({ value }) => {
             maximumFractionDigits: 10,
         }).format(number);
 
-        // If the original value ends with a decimal and the formatted one doesn't,
-        // it means the user just typed ".". Append it back for a better UX.
         if (value.endsWith('.') && !formatted.includes('.')) {
             return formatted + '.';
         }
